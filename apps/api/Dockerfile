@@ -3,9 +3,11 @@ FROM node:20-slim AS base
 # Create app directory
 WORKDIR /app
 
+# Update and enable Corepack
+RUN npm install -g corepack@latest && \
+    corepack enable
 # Install pnpm
-RUN npm install -g pnpm corepack@latest
-RUN corepack enable
+RUN npm install -g pnpm
 
 # Copy package files
 COPY ./package.json ./pnpm-lock.yaml ./
