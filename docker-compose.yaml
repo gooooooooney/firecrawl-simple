@@ -15,7 +15,7 @@ services:
       - backend
 
   firecrawl-api:
-    image: trieve/firecrawl:v0.0.46
+    image: trieve/firecrawl:v0.0.50
     networks:
       - backend
     environment:
@@ -39,7 +39,7 @@ services:
     command: ["pnpm", "run", "start:production"]
 
   firecrawl-worker:
-    image: trieve/firecrawl:v0.0.46
+    image: trieve/firecrawl:v0.0.50
     networks:
       - backend
     environment:
