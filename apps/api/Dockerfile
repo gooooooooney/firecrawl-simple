@@ -4,7 +4,10 @@ FROM node:20-slim AS base
 WORKDIR /app
 
 # Install pnpm
-RUN npm install -g pnpm corepack@latest
+   # 在安装依赖的步骤后添加以下命令
+RUN npm install -g corepack@latest
+
+RUN npm install -g pnpm
 RUN corepack enable
 
 # Copy package files
